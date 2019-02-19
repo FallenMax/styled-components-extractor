@@ -1,0 +1,14 @@
+__tests__/**
+.gitignore
+.vscode-test/**
+.vscode/**
+images/**
+!images/logo.png
+jsconfig.json
+out/**/*.spec.js
+out/**/*.spec.js.map
+src/**
+tsconfig.json
+tslint.json
+typings/**
+vsc-extension-quickstart.md
