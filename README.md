@@ -1,6 +1,6 @@
 # Styled-Components Extractor
 
-How to compose [styled-components](https://www.styled-components.com/) FASTER?
+Compose [styled-components](https://www.styled-components.com/) FASTER
 
 1. (Recommended) Use [Emmet](https://emmet.io/) to create JSX element tree
 2. Extract unbound components to clipboard, then paste it where approriate

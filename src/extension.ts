@@ -13,8 +13,7 @@ const extract = async (options: {
     }
 
     const curLang = editor.document.languageId
-    console.log('curLang ', curLang)
-    if (!supportedLangs.includes(curLang)) {
+    if (supportedLangs.indexOf(curLang) === -1) {
       vscode.window.showWarningMessage(
         '[SCE] Only `.jsx` and `.tsx` is supported',
       )

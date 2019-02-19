@@ -48,7 +48,7 @@
     }
   },
   "scripts": {
-    "vscode:prepublish": "npm run compile",
+    "vscode:prepublish": "npm run compile && npm run test",
     "compile": "tsc -p ./",
     "watch": "tsc -watch -p ./",
     "postinstall": "node ./node_modules/vscode/bin/install",
@@ -58,19 +58,14 @@
   "devDependencies": {
     "@types/babel__traverse": "^7.0.3",
     "@types/jest": "^24.0.6",
-    "@types/mkdirp": "^0.5.2",
-    "@types/node": "^11.9.4",
-    "@types/prettier": "^1.16.1",
     "jest": "^24.1.0",
     "ts-jest": "^24.0.0",
-    "tslint": "^5.12.1",
     "typescript": "^3.3.3",
     "vscode": "^1.1.29"
   },
   "dependencies": {
     "@babel/parser": "^7.1.6",
-    "@babel/traverse": "^7.1.6",
-    "recast": "0.14.7"
+    "@babel/traverse": "^7.1.6"
   },
   "jest": {
     "transform": {
