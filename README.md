@@ -10,7 +10,7 @@ How to compose [styled-components](https://www.styled-components.com/) FASTER?
 
 ## Usage
 
-Use VS Code Command: `Extract exported styled-components to clipboard` (or `Extract styled-components`)
+Use VS Code Command: `Extract styled-components` (or `Extract exported styled-components`)
 
 Optionally, You can bind these commands to shortcuts via `File -> Preferences -> Keyboard Shortcuts`.
 
