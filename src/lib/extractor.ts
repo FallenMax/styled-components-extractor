@@ -1,7 +1,5 @@
 import traverse from '@babel/traverse'
 import * as parser from '@babel/parser'
-// @ts-ignore
-import * as recast from 'recast'
 
 const parseOptions: parser.ParserOptions = {
   sourceType: 'module',
@@ -16,7 +14,6 @@ const parseOptions: parser.ParserOptions = {
     'optionalCatchBinding',
   ],
 }
-// const parse = (source: string) => parser.parse(source, parseOptions)
 
 const STYLED_COMPONENTS_IDENTIFIER = 'styled'
 export const collectUnbound = (code: string) => {
@@ -77,7 +74,7 @@ export const generateDeclarations = ({
     ...(importStyled && !styledImported
       ? [`import styled from 'styled-components'`]
       : []),
-    ...unbound.map(varName => {
+    ...unbound.map((varName) => {
       return `${
         exportIdentifier ? 'export ' : ''
       }const ${varName} = styled.div\`\``

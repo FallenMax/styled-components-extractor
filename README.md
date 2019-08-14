@@ -2,9 +2,9 @@
 
 Compose [styled-components](https://www.styled-components.com/) FASTER
 
-1. (Recommended) Use [Emmet](https://emmet.io/) to create JSX element tree
+1. (Optional) Use [Emmet](https://emmet.io/) to create JSX element tree
 2. Extract unbound components to clipboard, then paste it where approriate
-3. (Recommended) Use TypeScript to `auto import` those components
+3. (Optional) Use TypeScript to `auto import` those components
 
 ![screenshot](images/screenshot.gif)
 
@@ -41,6 +41,10 @@ Example:
 ```
 
 ## Release Notes
+
+### 0.0.5
+
+Support `.js`, `.ts`, `.jsx` and `.tsx`
 
 ### 0.0.1
 

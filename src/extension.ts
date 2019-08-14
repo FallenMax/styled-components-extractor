@@ -1,7 +1,7 @@
 import * as vscode from 'vscode'
 import { collectUnbound, generateDeclarations } from './lib/extractor'
 
-const supportedLangs = ['javascriptreact', 'typescriptreact']
+const supportedLangs = ['javascript', 'javascriptreact', 'typescriptreact']
 
 const extract = async (options: {
   exportIdentifier: boolean
@@ -12,10 +12,12 @@ const extract = async (options: {
       return
     }
 
-    const curLang = editor.document.languageId
-    if (supportedLangs.indexOf(curLang) === -1) {
+    if (
+      supportedLangs.indexOf(editor.document.languageId) === -1 &&
+      !/\.(js|ts)x?$/.test(editor.document.fileName)
+    ) {
       vscode.window.showWarningMessage(
-        '[SCE] Only `.jsx` and `.tsx` is supported',
+        '[SCE] Only `.js`, `.ts`, `.jsx` and `.tsx` are supported',
       )
       return
     }
