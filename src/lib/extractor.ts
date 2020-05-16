@@ -1,5 +1,5 @@
-import traverse from '@babel/traverse'
 import * as parser from '@babel/parser'
+import traverse from '@babel/traverse'
 
 const parseOptions: parser.ParserOptions = {
   sourceType: 'module',
@@ -12,6 +12,8 @@ const parseOptions: parser.ParserOptions = {
     'dynamicImport',
     'decorators-legacy',
     'optionalCatchBinding',
+    'optionalChaining',
+    'nullishCoalescingOperator',
   ],
 }
 

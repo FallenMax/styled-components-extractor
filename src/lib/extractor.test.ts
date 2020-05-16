@@ -5,6 +5,7 @@ test('collectUnbound', async () => {
 const Def = 1 as any
 
 const TestComponent: React.SFC = () => {
+  const c = a?.b ?? c
   return (
     <Abc someAttrs>
       <Def>
