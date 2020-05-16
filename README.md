@@ -1,10 +1,10 @@
 # Styled-Components Extractor
 
-Compose [styled-components](https://www.styled-components.com/) FASTER
+A faster [styled-components](https://www.styled-components.com/) workflow
 
 1. (Optional) Use [Emmet](https://emmet.io/) to create JSX element tree
-2. Extract unbound components to clipboard, then paste it where approriate
-3. (Optional) Use TypeScript to `auto import` those components
+2. Extract unbound components to clipboard, then paste it where approriate (this extensions extract and copy for you)
+3. (Optional) If you are using TypeScript and pasted them in another file, your can `auto import` those styled components with help of VS Code
 
 ![screenshot](images/screenshot.gif)
 
@@ -41,6 +41,10 @@ Example:
 ```
 
 ## Release Notes
+
+### 0.0.6
+
+Support new syntax: optional chaining (`?.`), nullish coalescing (`??`)
 
 ### 0.0.5
 
