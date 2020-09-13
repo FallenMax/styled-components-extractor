@@ -1,8 +1,8 @@
 {
   "name": "styled-components-extractor",
   "displayName": "Styled-Components Extractor",
-  "description": "Extract unbound react components into styled-component",
-  "version": "0.0.6",
+  "description": "Generate styled-components from JSX tags. A faster styled-component workflow.",
+  "version": "0.0.7",
   "publisher": "FallenMax",
   "engines": {
     "vscode": "^1.31.0"

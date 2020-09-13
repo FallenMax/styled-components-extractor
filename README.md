@@ -1,6 +1,6 @@
 # Styled-Components Extractor
 
-A faster [styled-components](https://www.styled-components.com/) workflow
+Generate [styled-components](https://www.styled-components.com/) from JSX tags.
 
 1. (Optional) Use [Emmet](https://emmet.io/) to create JSX element tree
 2. Extract unbound components to clipboard, then paste it where approriate (this extensions extract and copy for you)
@@ -40,16 +40,6 @@ Example:
 }
 ```
 
-## Release Notes
+## Buy me a coffee
 
-### 0.0.6
-
-Support new syntax: optional chaining (`?.`), nullish coalescing (`??`)
-
-### 0.0.5
-
-Support `.js`, `.ts`, `.jsx` and `.tsx`
-
-### 0.0.1
-
-First release
+https://www.buymeacoffee.com/fallenmax
