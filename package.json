@@ -27,22 +27,40 @@
   "contributes": {
     "commands": [
       {
-        "command": "styledComponentsExtractor.extract",
-        "title": "Extract styled-components"
+        "command": "styledComponentsExtractor.extractToClipboard",
+        "title": "Extract styled-components to clipboard"
       },
       {
-        "command": "styledComponentsExtractor.extractExported",
-        "title": "Extract exported styled-components"
+        "command": "styledComponentsExtractor.extractExportedToClipboard",
+        "title": "Extract exported styled-components to clipboard"
+      },
+      {
+        "command": "styledComponentsExtractor.extractToSameFile",
+        "title": "Extract styled-components to the same file"
+      },
+      {
+        "command": "styledComponentsExtractor.extractToSeparateFile",
+        "title": "Extract exported styled-components to a separate file"
       }
     ],
     "configuration": {
       "type": "object",
       "title": "Styled-Components Extractor configuration",
       "properties": {
+        "styledComponentsExtractor.separateFile.matchPattern": {
+          "type": "string",
+          "default": "*",
+          "markdownDescription": "Matches files that are eligible for extraction. The match pattern excludes the extension. You can use `*` as a wildcard. Only applies when extracting to a separate file."
+        },
+        "styledComponentsExtractor.separateFile.outputFile": {
+          "type": "string",
+          "default": "styles.ts",
+          "markdownDescription": "The name of the file, excluding the extension, to place extracted components extracting to a separate file. You can use `$1`, `$2`, etc to match the contents of each wildcard from `matchPattern`, allowing you to name the file based on the file the component was extracted from."
+        },
         "styledComponentsExtractor.addImportStatement": {
           "type": "boolean",
           "default": "true",
-          "description": "Add `import styled from 'styled-component'` statement if variable `styled` is unbound"
+          "markdownDescription": "Add `import styled from 'styled-component'` statement if variable `styled` is unbound. Only applies when extracting to clipboard."
         }
       }
     }
@@ -58,6 +76,9 @@
   "devDependencies": {
     "@types/babel__traverse": "^7.0.3",
     "@types/jest": "^25.2.2",
+    "@typescript-eslint/eslint-plugin": "^5.47.1",
+    "@typescript-eslint/parser": "^5.47.1",
+    "eslint": "^8.30.0",
     "jest": "^26.0.1",
     "ts-jest": "^26.0.0",
     "typescript": "^3.3.3",
