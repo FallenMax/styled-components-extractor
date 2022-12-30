@@ -2,7 +2,7 @@
   "name": "styled-components-extractor",
   "displayName": "Styled-Components Extractor",
   "description": "Generate styled-components from JSX tags. A faster styled-component workflow.",
-  "version": "0.0.7",
+  "version": "0.1.0",
   "publisher": "FallenMax",
   "engines": {
     "vscode": "^1.31.0"
