@@ -17,12 +17,10 @@ const parseOptions: parser.ParserOptions = {
   ],
 }
 
-const STYLED_COMPONENTS_IDENTIFIER = 'styled'
 export const collectUnbound = (code: string) => {
   const ast = parser.parse(code, parseOptions)
 
   const unboundJSXIdentifiers = new Set<string>()
-  let styledImported: undefined | boolean = undefined
 
   traverse(ast, {
     enter(path) {
@@ -39,11 +37,6 @@ export const collectUnbound = (code: string) => {
           }
           if (!path.scope.hasBinding(node.name)) {
             unboundJSXIdentifiers.add(node.name)
-            if (styledImported == null) {
-              styledImported = path.scope.hasBinding(
-                STYLED_COMPONENTS_IDENTIFIER,
-              )
-            }
           }
 
           break
@@ -54,32 +47,21 @@ export const collectUnbound = (code: string) => {
     },
   })
 
-  const unbound = [...unboundJSXIdentifiers]
-  return {
-    unbound,
-    styledImported: Boolean(styledImported),
-  }
+  return [...unboundJSXIdentifiers]
 }
 
 export const generateDeclarations = ({
   unbound,
-  styledImported,
   exportIdentifier,
-  importStyled,
 }: {
   unbound: string[]
-  styledImported: boolean
   exportIdentifier: boolean
-  importStyled: boolean
 }): string => {
-  return [
-    ...(importStyled && !styledImported
-      ? [`import styled from 'styled-components'`]
-      : []),
-    ...unbound.map((varName) => {
+  return unbound
+    .map((varName) => {
       return `${
         exportIdentifier ? 'export ' : ''
       }const ${varName} = styled.div\`\``
-    }),
-  ].join('\n')
+    })
+    .join('\n')
 }
