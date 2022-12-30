@@ -77,19 +77,19 @@
     "test:watch": "jest --watch"
   },
   "devDependencies": {
-    "@types/babel__traverse": "^7.0.3",
+    "@types/babel__traverse": "^7.18.3",
     "@types/jest": "^25.2.2",
     "@typescript-eslint/eslint-plugin": "^5.47.1",
     "@typescript-eslint/parser": "^5.47.1",
     "eslint": "^8.30.0",
     "jest": "^26.0.1",
     "ts-jest": "^26.0.0",
-    "typescript": "^3.3.3",
+    "typescript": "^4.9.4",
     "vscode": "^1.1.29"
   },
   "dependencies": {
-    "@babel/parser": "^7.1.6",
-    "@babel/traverse": "^7.1.6"
+    "@babel/parser": "^7.20.7",
+    "@babel/traverse": "^7.20.10"
   },
   "jest": {
     "transform": {

@@ -28,7 +28,7 @@ export const collectUnbound = (code: string) => {
 
       switch (node.type) {
         case 'JSXIdentifier': {
-          if (path.parentPath.node.type !== 'JSXOpeningElement') {
+          if (path.parentPath?.node.type !== 'JSXOpeningElement') {
             return
           }
           const isComponent = /[A-Z]/.test(node.name)

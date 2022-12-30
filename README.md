@@ -122,11 +122,3 @@ Configuration:
 ### Note on TypeScript
 
 If you're using TypeScript, your files will end with `.tsx` or `.ts` instead. However, you can still use the exact same configuration. If the JSX file has a `.tsx` extension, the extracted file will automatically have a `.ts` extension.
-
-## Buy me a coffee
-
-https://www.buymeacoffee.com/fallenmax
-
-```
-
-```
