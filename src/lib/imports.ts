@@ -25,10 +25,10 @@ export function getImportInsertion(
 }
 
 export function getStyledImportInsertion(existingText: string) {
-  const importRegex = new RegExp(
-    `import\\s+styled\\s+from\\s+["']styled-components["']`,
-  )
-  const importAlreadyPresent = importRegex.exec(existingText)
+  // we can use babel or `https://classic.yarnpkg.com/en/package/es-module-lexer` to parse the imports,
+  // but for now we'll just use a regex
+  const importRegex = /import.*\bstyled\b.*\bfrom\b.*["']styled-components["']/
+  const importAlreadyPresent = importRegex.test(existingText)
   if (!importAlreadyPresent) {
     return {
       insertionText: `import styled from 'styled-components'\n`,

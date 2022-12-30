@@ -22,7 +22,7 @@ export const collectUnbound = (code: string) => {
 
   const unboundJSXIdentifiers = new Set<string>()
 
-  traverse(ast, {
+  traverse(ast as any, {
     enter(path) {
       const node = path.node
 

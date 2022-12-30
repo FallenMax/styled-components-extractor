@@ -40,10 +40,35 @@ import { baz } from "./qux"
   })
 })
 
+test('getStyledImportInsertion no existing import, but with other named imports ', async () => {
+  const code = `
+import { foo } from "./bar"
+import { css }  from 'styled-components'
+import { baz } from "./qux"
+  `
+
+  const insertion = getStyledImportInsertion(code)
+  expect(insertion).toEqual({
+    insertionText: "import styled from 'styled-components'\n",
+    insertionOffset: 0,
+  })
+})
+
 test('getStyledImportInsertion with existing import', async () => {
   const code = `
 import { foo } from "./bar"
 import  styled from 'styled-components'
+import { baz } from "./qux"
+  `
+
+  const insertion = getStyledImportInsertion(code)
+  expect(insertion).toEqual(null)
+})
+
+test('getStyledImportInsertion with existing import, with other named imports ', async () => {
+  const code = `
+import { foo } from "./bar"
+import styled, { css } from 'styled-components'
 import { baz } from "./qux"
   `
 
