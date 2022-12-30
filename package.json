@@ -47,20 +47,23 @@
       "type": "object",
       "title": "Styled-Components Extractor configuration",
       "properties": {
-        "styledComponentsExtractor.separateFile.matchPattern": {
+        "styledComponentsExtractor.separateFile.advanced.inputFileRegex": {
           "type": "string",
-          "default": "*",
-          "markdownDescription": "Matches files that are eligible for extraction. The match pattern excludes the extension. You can use `*` as a wildcard. Only applies when extracting to a separate file."
+          "default": "",
+          "markdownDescription": "A regex pattern used to capture parts of the input file's name when extracting to a separate file. The pattern is matched against the file's name excluding the extension. The contents of the regex's capture groups can be referenced in the output file name as `$1`, `$2`, etc. Can be left blank if not needed.",
+          "order": 3
         },
         "styledComponentsExtractor.separateFile.outputFile": {
           "type": "string",
-          "default": "styles.ts",
-          "markdownDescription": "The name of the file, excluding the extension, to place extracted components extracting to a separate file. You can use `$1`, `$2`, etc to match the contents of each wildcard from `matchPattern`, allowing you to name the file based on the file the component was extracted from."
+          "default": "$name.styles",
+          "markdownDescription": "The name of the file, excluding the extension, to place extracted components. You can use `$name` to reference the name of the input file, excluding its extension. If `#styledComponentsExtractor.separateFile.advanced.inputFileRegex#` is provided, you can also use `$1`, `$2`.",
+          "order": 2
         },
         "styledComponentsExtractor.addImportStatement": {
           "type": "boolean",
           "default": "true",
-          "markdownDescription": "Add `import styled from 'styled-component'` statement if variable `styled` is unbound. Only applies when extracting to clipboard."
+          "markdownDescription": "Add `import styled from 'styled-component'` statement if variable `styled` is unbound. Only applies when extracting to clipboard.",
+          "order": 1
         }
       }
     }

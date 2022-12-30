@@ -76,8 +76,11 @@ const extract = async (type: ExtractType): Promise<void> => {
     } else if (type == 'extractToSeparateFile') {
       const styleFile = getCorrespondingStyleFile(
         editor.document.uri.path,
-        config.get('separateFile.matchPattern', '*'),
-        config.get('separateFile.outputFile', 'styles.ts'),
+        config.get('separateFile.outputFile', '$name.styles'),
+        config.get(
+          'styledComponentsExtractor.separateFile.advanced.inputFileRegex',
+          '',
+        ),
       )
       if (!styleFile) {
         vscode.window.showWarningMessage(
