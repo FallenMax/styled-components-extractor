@@ -4,7 +4,15 @@ import {
   stripExtension,
 } from './path-utils'
 
-test('relativeImportPathFromFile', async () => {
+test('relativeImportPathFromFile, same directory', async () => {
+  const importPath = relativeImportPathFromFile(
+    '/one/mycomponent.js',
+    '/one/mycomponent.styles.js',
+  )
+  expect(importPath).toEqual('./mycomponent.styles')
+})
+
+test('relativeImportPathFromFile, different directories', async () => {
   const importPath = relativeImportPathFromFile(
     '/one/two/three.js',
     '/one/four/five.js',
