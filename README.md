@@ -47,7 +47,7 @@ Example:
 
 ```json
 {
-  // Add `import styled from 'styled-component'` statement if variable `styled` is unbound
+  // Add `import styled from 'styled-components'` statement if variable `styled` is unbound
   // when copying to the clipboard only. When extracting to a file, whether to add this
   // import is automatically determined.
   "styledComponentsExtractor.addImportStatement": true
